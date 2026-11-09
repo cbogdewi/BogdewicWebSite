@@ -181,6 +181,28 @@ a { color: inherit; }
 .chip-amber { --c: var(--amber); }
 .chip-teal { --c: var(--teal); }
 
+/* Awards */
+.award-feature {
+  background: var(--grad); color: #fff; border: none; margin-bottom: 20px;
+  box-shadow: 0 18px 40px rgba(124, 58, 237, 0.25);
+}
+.award-feature h3 { font-size: clamp(22px, 3.4vw, 28px); margin: 10px 0 6px; }
+.award-feature p { margin: 0; opacity: 0.95; }
+.award-year {
+  display: inline-block; padding: 4px 12px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22); font-size: 13px; font-weight: 600;
+}
+.award-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start; }
+.award { position: relative; overflow: hidden; }
+.award::before { content: ""; position: absolute; inset: 0 0 auto; height: 5px; background: var(--accent); }
+.award-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.award-head h3 { font-size: 18px; }
+.award-count { font-family: "Sora", sans-serif; font-weight: 700; color: var(--accent); flex: none; }
+.award-issuer { margin: 4px 0 14px; color: var(--muted); font-size: 14px; }
+.award-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.award-list li { display: flex; gap: 12px; font-size: 15px; line-height: 1.45; }
+.award-list span { flex: none; width: 40px; font-weight: 600; color: var(--muted); font-size: 14px; }
+
 /* Projects */
 .project { display: block; text-decoration: none; max-width: 640px; transition: transform 0.2s ease; }
 .project:hover { transform: translateY(-4px); }

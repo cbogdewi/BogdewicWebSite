@@ -228,8 +228,9 @@ a { color: inherit; }
 .fn-build rect { fill: color-mix(in srgb, var(--violet) 12%, var(--surface)); stroke: var(--violet); }
 .fn-host rect { fill: color-mix(in srgb, var(--teal) 12%, var(--surface)); stroke: var(--teal); }
 .fn-fail rect { fill: color-mix(in srgb, var(--coral) 12%, var(--surface)); stroke: var(--coral); }
-.fn-build text, .fn-host text, .fn-fail text { fill: var(--ink); }
-.fn-build .fn-s, .fn-host .fn-s, .fn-fail .fn-s { fill: var(--muted); }
+.fn-check rect { fill: color-mix(in srgb, var(--amber) 14%, var(--surface)); stroke: var(--amber); }
+.fn-build text, .fn-host text, .fn-fail text, .fn-check text { fill: var(--ink); }
+.fn-build .fn-s, .fn-host .fn-s, .fn-fail .fn-s, .fn-check .fn-s { fill: var(--muted); }
 .fa { stroke: var(--muted); stroke-width: 1.4; marker-end: url(#arrowhead); }
 .flow-steps {
   list-style: none; margin: 0; padding: 0;

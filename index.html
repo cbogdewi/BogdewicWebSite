@@ -26,6 +26,7 @@
           <li><a href="#overview">Overview</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#pipeline">Data pipeline</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -215,6 +216,51 @@
         </div>
       </section>
 
+      <section class="section" id="pipeline">
+        <div class="section-head">
+          <p class="eyebrow">Data pipeline</p>
+          <h2>NYC 311 incident data, cleaned and shaped for insight</h2>
+          <p class="section-lede">This pipeline is based on the New York City 311 Service Requests dataset, which is refreshed daily and published through the Socrata Open Data API. The goal is simple: bring in raw service requests, validate the fields, standardize the data, and make it ready for analysis and reporting.</p>
+        </div>
+        <div class="pipeline-card card">
+          <div class="pipeline-grid">
+            <div class="pipeline-step">
+              <span class="step-label">01</span>
+              <h3>Source</h3>
+              <p>NYC Open Data: 311 Service Requests from 2020 to Present, refreshed daily via the Socrata API.</p>
+            </div>
+            <div class="pipeline-step">
+              <span class="step-label">02</span>
+              <h3>Extract</h3>
+              <p>Fetch records from the data source with a daily job, including core fields like unique_key, created_date, borough, agency, and complaint_type.</p>
+            </div>
+            <div class="pipeline-step">
+              <span class="step-label">03</span>
+              <h3>Validate</h3>
+              <p>Check for missing values, malformed timestamps, duplicate keys, and inconsistent categories before loading any data.</p>
+            </div>
+            <div class="pipeline-step">
+              <span class="step-label">04</span>
+              <h3>Transform</h3>
+              <p>Normalize dates, standardize borough names, map complaint categories, and shape the data for trend analysis and dashboarding.</p>
+            </div>
+            <div class="pipeline-step">
+              <span class="step-label">05</span>
+              <h3>Load</h3>
+              <p>Write the cleaned result to a structured table or data warehouse for reporting, summary metrics, and exploration.</p>
+            </div>
+            <div class="pipeline-step">
+              <span class="step-label">06</span>
+              <h3>Publish</h3>
+              <p>Surface the final data through a dashboard, alerting, or a public summary page that makes the pattern easy to understand.</p>
+            </div>
+          </div>
+          <div class="pipeline-summary">
+            <p>This is the same approach I bring to delivery work: clear inputs, disciplined checks, consistent transformations, and a reliable final output that can be trusted.</p>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="projects">
         <div class="section-head">
           <p class="eyebrow">Projects</p>
@@ -227,41 +273,6 @@
             <p>A Flask web app with live weather, news headlines and sports scores, plus my Health Log and Food &amp; Mood apps.</p>
             <span class="project-link">dashboard.bogdewic.com →</span>
           </a>
-        </div>
-      </section>
-
-      <section class="section" id="pipeline">
-        <div class="section-head">
-          <p class="eyebrow">Data pipeline</p>
-          <h2>Turning raw inputs into something useful and trustworthy</h2>
-          <p class="section-lede">My work isn’t limited to delivery leadership. I also think in systems: how data moves, how it is checked, and how it becomes clear enough to support better decisions.</p>
-        </div>
-        <div class="pipeline-card card">
-          <div class="pipeline-grid">
-            <div class="pipeline-step">
-              <span class="step-label">01</span>
-              <h3>Source</h3>
-              <p>Data arrives from applications, spreadsheets, APIs, and operational systems.</p>
-            </div>
-            <div class="pipeline-step">
-              <span class="step-label">02</span>
-              <h3>Extract</h3>
-              <p>Inputs are pulled into a controlled process with clear boundaries and validation.</p>
-            </div>
-            <div class="pipeline-step">
-              <span class="step-label">03</span>
-              <h3>Transform</h3>
-              <p>Rules, cleaning, joins, and logic shape the data into standard, decision-ready output.</p>
-            </div>
-            <div class="pipeline-step">
-              <span class="step-label">04</span>
-              <h3>Load</h3>
-              <p>Validated data lands in a structured destination where dashboards, reporting, and analysis can be trusted.</p>
-            </div>
-          </div>
-          <div class="pipeline-summary">
-            <p>This is the same mindset I bring to delivery work: clear inputs, disciplined steps, review points, and a process that reduces risk while increasing confidence.</p>
-          </div>
         </div>
       </section>
 

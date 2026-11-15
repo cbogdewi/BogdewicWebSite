@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A daily ETL demo using FEMA OpenFEMA disaster declaration data.">
+  <meta name="theme-color" content="#0b6ca8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>FEMA Disaster Data | Bogdewic</title>
+  <style>
+    :root{color-scheme:light;--ink:#183247;--muted:#526978;--line:#dfeaf0;--blue:#0b6ca8;--green:#4d8f7a;--surface:#fff;--bg:#eef5f7}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+    main{max-width:1100px;margin:auto;padding:36px 22px 64px}.back{color:var(--blue);font-weight:700;text-decoration:none}.eyebrow{margin:26px 0 6px;color:var(--blue);font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    h1{margin:0;font-size:clamp(2rem,5vw,3.3rem);line-height:1.1}h2{font-size:1.15rem;margin:0 0 12px}.lede{max-width:760px;color:var(--muted);font-size:1.08rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin:26px 0}.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 10px 24px #152a3a0c}.metric{font-size:2rem;font-weight:800;line-height:1.2}.label{color:var(--muted);font-size:.9rem}.columns{display:grid;grid-template-columns:1fr 1fr;gap:16px}.bars{display:grid;gap:10px}.bar-row{display:grid;grid-template-columns:minmax(90px,1fr) 2fr auto;gap:10px;align-items:center;font-size:.88rem}.track{height:9px;background:#e8f0f3;border-radius:20px;overflow:hidden}.fill{height:100%;background:var(--blue);border-radius:20px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;text-align:left}th,td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:.84rem;color:var(--muted)}td{font-size:.91rem}.status{padding:12px 15px;border-radius:10px;background:#e5f2f8;color:#214c64}.status.error{background:#fff0eb;color:#853d26}.note{font-size:.9rem;color:var(--muted)}footer{margin-top:24px;color:var(--muted);font-size:.85rem}
+    @media(max-width:700px){.columns{grid-template-columns:1fr}.bar-row{grid-template-columns:90px 1fr auto}main{padding-top:24px}}
+  </style>
+</head>
+<body>
+<main>
+  <a class="back" href="index.html">← Back to overview</a>
+  <p class="eyebrow">Working ETL demo · FEMA OpenFEMA API v2</p>
+  <h1>Disaster declarations, made easier to explore</h1>
+  <p class="lede">A scheduled GitHub Actions job extracts FEMA declaration summaries, validates required identifiers and dates, removes duplicate declaration numbers, creates simple state/type/year summaries, and publishes this static report. It reads public data and needs no API key.</p>
+  <div id="status" class="status" role="status" aria-live="polite">Loading the latest generated report…</div>
+  <section class="grid" aria-label="Pipeline summary">
+    <article class="card"><div id="total" class="metric">—</div><div class="label">valid unique declarations processed</div></article>
+    <article class="card"><div id="states-total" class="metric">—</div><div class="label">states and territories represented</div></article>
+    <article class="card"><div id="generated" class="metric">—</div><div class="label">last successful data generation (UTC)</div></article>
+  </section>
+  <div class="columns">
+    <section class="card"><h2>Declarations by incident type</h2><div id="types" class="bars" class="note">Waiting for data…</div></section>
+    <section class="card"><h2>Declarations by state or territory</h2><div id="states" class="bars">Waiting for data…</div></section>
+  </div>
+  <section class="card" style="margin-top:16px"><h2>Most recent declarations in the processed dataset</h2><div class="table-wrap"><table><thead><tr><th>Date</th><th>Disaster</th><th>State</th><th>Incident</th><th>Title / area</th></tr></thead><tbody id="latest"><tr><td colspan="5">Waiting for data…</td></tr></tbody></table></div></section>
+  <p class="note">This report summarizes the available FEMA declaration records; it is not a live emergency alert or a measure of current risk. The source refreshes independently, and this pipeline runs once daily. <a href="https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries" rel="noreferrer">Open the source API</a>.</p>
+  <footer>Pipeline: FEMA API → extract → validate and deduplicate → aggregate → JSON report → this page. Source data and generated summaries are public.</footer>
+</main>
+<script src="fema-dashboard.js" defer></script>
+</body>
+</html>

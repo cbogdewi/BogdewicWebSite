@@ -1,7 +1,7 @@
 {
   "source": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries",
   "dataset": "FEMA Disaster Declarations Summaries (OpenFEMA API v2)",
-  "generatedAt": "2026-11-15T23:26:37+00:00",
+  "generatedAt": "2026-11-16T00:25:38+00:00",
   "recordCount": 5284,
   "rejectedCount": 0,
   "states": [

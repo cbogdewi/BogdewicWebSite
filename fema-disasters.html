@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -25,6 +25,7 @@
     .bars{display:grid;gap:10px}.bar-row{display:grid;grid-template-columns:minmax(90px,1fr) minmax(100px,2fr) auto;gap:10px;align-items:center;font-size:.9rem}.track{height:10px;background:#edf3f5;border-radius:999px;overflow:hidden}.fill{display:block;height:100%;background:linear-gradient(90deg,var(--blue),#4ca2d1);border-radius:999px}
     .table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}.table th,.table td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.92rem}.table th{font-size:.8rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}.table tbody tr:last-child td{border-bottom:none}.footer{padding:24px 0 64px;color:var(--muted);font-size:.9rem}.footline{border-top:1px solid var(--line);padding-top:18px}
     @media (max-width:760px){.hero-wrap,.grid-2,.pipeline-steps{grid-template-columns:1fr}.nav{display:none}.topbar-inner{min-height:58px}.timeline li{grid-template-columns:1fr}.bar-row{grid-template-columns:90px 1fr auto}}
+    .mt-18{margin-top:18px}
   </style>
 </head>
 <body>
@@ -125,7 +126,7 @@
         <p>The report below reflects the latest generated dataset from the scheduled job. It is a public summary view, not an emergency alert system.</p>
       </div>
       <div id="status" class="status" role="status" aria-live="polite">Loading the latest generated report…</div>
-      <div class="stats" aria-label="Summary metrics">
+      <div class="stats" role="group" aria-label="Summary metrics">
         <div class="stat-box"><div id="total" class="num">—</div><div class="label">valid declarations processed</div></div>
         <div class="stat-box"><div id="states-total" class="num">—</div><div class="label">states or territories represented</div></div>
         <div class="stat-box"><div id="generated" class="num">—</div><div class="label">last generation (UTC)</div></div>
@@ -140,17 +141,17 @@
           <div id="states" class="bars">Waiting for data…</div>
         </article>
       </div>
-      <article class="card" style="margin-top:18px;">
+      <article class="card mt-18">
         <h3>Most recent declarations</h3>
         <div class="table-wrap">
           <table class="table">
             <thead>
               <tr>
-                <th>Date</th>
-                <th>Disaster</th>
-                <th>State</th>
-                <th>Incident</th>
-                <th>Title / area</th>
+                <th scope="col">Date</th>
+                <th scope="col">Disaster</th>
+                <th scope="col">State</th>
+                <th scope="col">Incident</th>
+                <th scope="col">Title / area</th>
               </tr>
             </thead>
             <tbody id="latest">

@@ -6,12 +6,12 @@
     <title>Chris Bogdewic | Overview</title>
     <meta property="og:image" content="https://www.bogdewic.com/images/chris-bogdewic-640.jpg">
     <meta name="description" content="Chris Bogdewic: a thoughtful technology leader helping teams turn complex delivery into calm, reliable progress.">
-    <meta name="theme-color" content="#0b6ca8">
+    <meta name="theme-color" content="#ffffff">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="nav.css">
     <script src="nav.js" defer></script>
@@ -40,18 +40,15 @@
 
     <main id="main">
       <section class="hero" id="overview">
-        <div class="blob blob-a"></div>
-        <div class="blob blob-b"></div>
-        <div class="blob blob-c"></div>
         <div class="hero-inner">
           <figure class="hero-photo">
             <picture>
-              <source type="image/webp" srcset="images/chris-bogdewic-320.webp 320w, images/chris-bogdewic-640.webp 640w" sizes="(max-width: 899px) 132px, 340px">
-              <img src="images/chris-bogdewic-640.jpg" srcset="images/chris-bogdewic-320.jpg 320w, images/chris-bogdewic-640.jpg 640w" sizes="(max-width: 899px) 132px, 340px" width="640" height="800" alt="Chris Bogdewic smiling, wearing a gray quarter-zip over a light blue collared shirt" fetchpriority="high">
+              <source type="image/webp" srcset="images/chris-bogdewic-320.webp 320w, images/chris-bogdewic-640.webp 640w" sizes="168px">
+              <img src="images/chris-bogdewic-640.jpg" srcset="images/chris-bogdewic-320.jpg 320w, images/chris-bogdewic-640.jpg 640w" sizes="168px" width="640" height="800" alt="Chris Bogdewic smiling, wearing a gray quarter-zip over a light blue collared shirt" fetchpriority="high">
             </picture>
           </figure>
           <div class="hero-copy">
-            <p class="eyebrow">Overview</p>
+            <p class="eyebrow">Agile transformation leader</p>
             <h1>I help teams turn <span class="grad">complex delivery</span> into calm, reliable progress.</h1>
             <p class="lede">I’m Chris Bogdewic—an experienced technology leader who blends hands-on engineering knowledge, agile coaching, and practical program leadership. I help organizations make better decisions, improve delivery, and build systems that can actually scale.</p>
             <div class="cta-row">
@@ -233,19 +230,19 @@
         <div class="section-head">
           <p class="eyebrow">Data pipeline</p>
           <h2>FEMA disaster declarations, cleaned and shaped for insight</h2>
-          <p class="section-lede">This pipeline uses FEMA’s Disaster Declarations Summaries dataset, published through the OpenFEMA API. Every day it pulls the full declaration history, validates each record, standardizes the fields, and turns the result into a public summary report.</p>
+          <p class="section-lede">This pipeline uses FEMA’s Disaster Declarations Summaries dataset, published through FEMA’s public REST API (OpenFEMA). Every day it pulls the full declaration history, validates each record, standardizes the fields, and turns the result into a public summary report.</p>
         </div>
         <div class="pipeline-card card">
           <div class="pipeline-grid">
             <div class="pipeline-step">
               <span class="step-label">01</span>
               <h3>Source</h3>
-              <p>OpenFEMA API v2: Disaster Declarations Summaries, covering every federal disaster declaration from 1953 to today.</p>
+              <p>FEMA’s public REST API (OpenFEMA v2): Disaster Declarations Summaries, covering every federal disaster declaration from 1953 to today.</p>
             </div>
             <div class="pipeline-step">
               <span class="step-label">02</span>
               <h3>Extract</h3>
-              <p>A daily scheduled job pages through the API 1,000 records at a time, requesting only the fields it needs: disaster number, state, declaration date, incident type, title and designated area. Failed requests are retried automatically.</p>
+              <p>A daily scheduled Python job calls the REST API over HTTPS, paging through 1,000 JSON records at a time and using standard query parameters to sort by date and request only the fields it needs. Failed requests are retried automatically.</p>
             </div>
             <div class="pipeline-step">
               <span class="step-label">03</span>
@@ -289,7 +286,7 @@
           <a class="card project" href="fema-disasters.html">
             <span class="project-tag">Public report</span>
             <h3>FEMA disaster data</h3>
-            <p>A daily ETL pipeline that pulls FEMA declaration summaries, validates the source data, and publishes a readable public report.</p>
+            <p>A daily ETL pipeline that pulls FEMA declaration summaries from a public REST API, validates the source data, and publishes a readable public report.</p>
             <span class="project-link">View FEMA report →</span>
           </a>
         </div>

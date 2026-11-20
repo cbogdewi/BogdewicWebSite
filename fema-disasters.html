@@ -13,24 +13,26 @@
   <link rel="stylesheet" href="nav.css">
   <script src="nav.js" defer></script>
   <style>
-    :root{color-scheme:light;--bg:#f4f6f8;--surface:#ffffff;--surface-2:#f4f6f8;--ink:#1d2b3a;--muted:#5a6a7a;--line:#e2e7ec;--blue:#0071e3;--green:#14a37f;--pink:#e0598b;--slate:#8593a1;--shadow:0 18px 42px rgba(29,43,58,.06);--radius:22px;--font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,system-ui,"Segoe UI",sans-serif}
+    :root{color-scheme:light;--bg:#f4f6f8;--surface:#ffffff;--surface-2:#f4f6f8;--ink:#1d2b3a;--muted:#5f6f80;--blue-text:#0062c4;--green-text:#0c7a5f;--pink-text:#b8336a;--line:#e2e7ec;--blue:#0071e3;--green:#14a37f;--pink:#e0598b;--slate:#8593a1;--shadow:none;--radius:22px;--font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,system-ui,"Segoe UI",sans-serif}
     *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:64px}body{margin:0;background:#f4f6f8;color:var(--ink);font-family:var(--font),Segoe UI,sans-serif;line-height:1.6}
     a{text-decoration:none;color:inherit}.container{max-width:1100px;margin:0 auto;padding:0 24px}
-    .hero{padding:68px 0 30px}.hero-wrap{display:grid;grid-template-columns:1.4fr .9fr;gap:26px;align-items:center}.eyebrow{display:inline-block;margin-bottom:16px;padding:7px 10px;border:1px solid rgba(11,108,168,.15);background:rgba(11,108,168,.06);border-radius:999px;color:var(--blue);font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.h1{margin:0;font-family:var(--font);font-size:clamp(2.3rem,4vw,4rem);line-height:1.05;letter-spacing:-.04em}.gradient{background:linear-gradient(90deg,var(--blue),#1a8ec4,#3a7bc0);-webkit-background-clip:text;background-clip:text;color:transparent}.lede{max-width:760px;color:var(--muted);font-size:1.08rem;margin:18px 0 26px}.cta-row{display:flex;flex-wrap:wrap;gap:12px}.button{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;font-weight:700;border:1px solid transparent;transition:transform .18s ease,box-shadow .18s ease}.button:hover{transform:translateY(-1px)}.button-primary{background:linear-gradient(135deg,var(--blue),#0d7db7);color:#fff;box-shadow:0 14px 28px rgba(11,108,168,.22)}.button-secondary{border-color:rgba(24,50,71,.14);background:rgba(255,255,255,.75);color:var(--ink)}.hero-card{background:linear-gradient(180deg,#fff,#f4fafc);border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:var(--shadow)}.mini-label{color:var(--muted);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.mini-value{font-size:2rem;font-weight:800;letter-spacing:-.03em;margin:8px 0 4px}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.mini-box{padding:12px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line)}.mini-box strong{display:block;font-size:1.2rem}.mini-box span{font-size:.82rem;color:var(--muted)}
-    .section{padding:32px 0}.section-head{margin-bottom:20px}.section-head h2{font-family:var(--font);font-size:clamp(1.6rem,2vw,2.2rem);letter-spacing:-.03em;margin:0 0 10px}.section-head p{margin:0;color:var(--muted);max-width:760px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}.project-tag{display:inline-block;padding:6px 9px;border-radius:999px;background:rgba(77,143,122,.1);color:var(--green);font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.project-link{display:inline-block;margin-top:16px;color:var(--blue);font-weight:700}.project-card{display:block;height:100%}.project-card:hover{transform:translateY(-1px);transition:transform .2s ease}.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
-    .timeline{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:16px}.timeline li{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--line)}.when{font-weight:800;color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.08em}.timeline h3{margin:0 0 4px}.timeline p{margin:0;color:var(--muted)}
+    .hero{padding:68px 0 30px}.hero-wrap{display:grid;grid-template-columns:1.4fr .9fr;gap:26px;align-items:center}.eyebrow{display:block;margin-bottom:10px;color:var(--blue-text);font-size:17px;font-weight:600;letter-spacing:-.01em}.h1{margin:0;font-family:var(--font);font-size:clamp(2.3rem,4vw,4rem);line-height:1.05;letter-spacing:-.04em}.gradient{color:var(--blue)}.lede{max-width:760px;color:var(--muted);font-size:1.08rem;margin:18px 0 26px}.cta-row{display:flex;flex-wrap:wrap;gap:12px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;border-radius:999px;font-size:17px;font-weight:500;transition:background-color .2s,color .2s}.button-primary{background:var(--blue);color:#fff}.button-primary:hover{background:#0062c4}.button-secondary{color:var(--blue-text);box-shadow:inset 0 0 0 1.5px var(--blue)}.button-secondary:hover{background:var(--blue);color:#fff}.hero-card{background:var(--surface);border-radius:var(--radius);padding:22px}.mini-label{color:var(--muted);font-size:15px;font-weight:600}.mini-value{font-size:2rem;font-weight:800;letter-spacing:-.03em;margin:8px 0 4px}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.mini-box{padding:12px 14px;border-radius:14px;background:var(--surface-2)}.mini-box strong{display:block;font-size:1.2rem}.mini-box span{font-size:.82rem;color:var(--muted)}
+    .section{padding:32px 0}.section-head{margin-bottom:20px}.section-head h2{font-family:var(--font);font-size:clamp(1.6rem,2vw,2.2rem);letter-spacing:-.03em;margin:0 0 10px}.section-head p{margin:0;color:var(--muted);max-width:760px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.card{background:var(--surface);border-radius:var(--radius);padding:24px}.project-tag{font-size:14px;font-weight:600;color:var(--green-text)}.project-link{display:inline-block;margin-top:16px;color:var(--blue);font-weight:700}.project-card{display:block;height:100%}.project-card:hover{transform:translateY(-1px);transition:transform .2s ease}.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .timeline{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:16px}.timeline li{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--line)}.when{font-weight:600;color:var(--muted);font-size:15px}.timeline h3{margin:0 0 4px}.timeline p{margin:0;color:var(--muted)}
     .timeline li:last-child{border-bottom:none}
-    .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.badge{padding:8px 10px;border-radius:999px;border:1px solid rgba(24,50,71,.1);background:#f4f7f9;font-size:.8rem;font-weight:700}.badge.blue{background:rgba(11,108,168,.08);color:var(--blue)}.badge.green{background:rgba(77,143,122,.09);color:var(--green)}.badge.pink{background:rgba(224,89,139,.1);color:#b23a68}
-    .pipeline-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.step{padding:18px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#fff,#f8fbfc)}.step-number{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:rgba(11,108,168,.1);color:var(--blue);font-size:.8rem;font-weight:800}.step h3{margin:12px 0 8px}.step p{margin:0;color:var(--muted)}
-    .status{display:flex;align-items:flex-start;gap:10px;padding:14px 16px;border-radius:12px;background:#eaf4fb;border:1px solid rgba(11,108,168,.1);color:#1d4d68;font-weight:600;margin:18px 0 8px}.status.error{background:#fdf0f5;border-color:rgba(224,89,139,.2);color:#9b2f58}.status::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:#4d8f7a;margin-top:7px}.status.error::before{background:#e0598b}
-    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:18px 0 20px}.stat-box{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}.stat-box .num{font-size:2rem;font-weight:800;letter-spacing:-.04em}.stat-box .label{font-size:.82rem;color:var(--muted);margin-top:4px}
-    .bars{display:grid;gap:10px}.bar-row{display:grid;grid-template-columns:minmax(90px,1fr) minmax(100px,2fr) auto;gap:10px;align-items:center;font-size:.9rem}.track{height:10px;background:#edf3f5;border-radius:999px;overflow:hidden}.fill{display:block;height:100%;background:linear-gradient(90deg,var(--blue),#4ca2d1);border-radius:999px}
-    .table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}.table th,.table td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.92rem}.table th{font-size:.8rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}.table tbody tr:last-child td{border-bottom:none}.footer{padding:24px 0 64px;color:var(--muted);font-size:.9rem}.footline{border-top:1px solid var(--line);padding-top:18px}
+    .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.badge{padding:6px 12px;border-radius:999px;background:var(--surface-2);font-size:14px;font-weight:600}.badge.blue{color:var(--blue-text)}.badge.green{color:var(--green-text)}.badge.pink{color:var(--pink-text)}
+    .pipeline-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.step{padding:24px;border-radius:var(--radius);background:var(--surface)}.step-number{display:block;font:600 14px/1 ui-monospace,"SF Mono",Menlo,Consolas,monospace;color:var(--blue-text)}.step:nth-child(3n+2) .step-number{color:var(--green-text)}.step:nth-child(3n) .step-number{color:var(--pink-text)}.step h3{margin:12px 0 8px}.step p{margin:0;color:var(--muted)}
+    .status{display:flex;align-items:flex-start;gap:10px;padding:14px 16px;border-radius:14px;background:var(--surface);color:var(--ink);font-weight:500;margin:18px 0 8px}.status.error{background:#fdf0f5;border-color:rgba(224,89,139,.2);color:#9b2f58}.status::before{content:"";flex:none;display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--green);margin-top:7px}.status.error::before{background:#e0598b}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:18px 0 20px}.stat-box{background:var(--surface);border-radius:var(--radius);padding:22px}.stat-box .num{font-size:2rem;font-weight:800;letter-spacing:-.04em}.stat-box .label{font-size:.82rem;color:var(--muted);margin-top:4px}
+    .bars{display:grid;gap:10px}.bar-row{display:grid;grid-template-columns:minmax(90px,1fr) minmax(100px,2fr) auto;gap:10px;align-items:center;font-size:.9rem}.track{height:10px;background:var(--surface-2);border-radius:999px;overflow:hidden}.fill{display:block;height:100%;background:var(--blue);border-radius:999px}
+    .table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;background:var(--surface)}.table th,.table td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.92rem}.table th{font-size:14px;font-weight:600;color:var(--muted)}.table td:first-child,.table td:nth-child(4){white-space:nowrap}.table tbody tr:last-child td{border-bottom:none}.footer{padding:24px 0 64px;color:var(--muted);font-size:.9rem}.footline{border-top:1px solid var(--line);padding-top:18px}
     @media (max-width:760px){.hero-wrap,.grid-2,.pipeline-steps{grid-template-columns:1fr}.timeline li{grid-template-columns:1fr}.bar-row{grid-template-columns:90px 1fr auto}}
-    .mt-18{margin-top:18px}
+    .mt-18{margin-top:18px}.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    .skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:8px 14px;border-radius:10px}.skip:focus{left:8px;z-index:100}:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
   </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
   <header class="site-nav">
     <a class="sn-brand" href="index.html" aria-label="Bogdewic home">
       <span class="sn-mark">CB</span>
@@ -50,16 +52,16 @@
     </nav>
   </header>
 
-  <main id="top" class="container">
+  <main id="main" class="container">
     <section class="hero">
       <div class="hero-wrap">
         <div>
-          <div class="eyebrow">Working data project</div>
+          <p class="eyebrow">Data pipeline project</p>
           <h1 class="h1">A public <span class="gradient">FEMA ETL</span> that turns raw declarations into usable insight.</h1>
           <p class="lede">This project demonstrates how I approach data work in practice: source a public API, validate the schema, normalize the fields, summarize the results, and publish a clear, trustworthy view for exploration.</p>
           <div class="cta-row">
             <a class="button button-primary" href="#report">View the report</a>
-            <a class="button button-secondary" href="https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries" target="_blank" rel="noreferrer">Open data source</a>
+            <a class="button button-secondary" href="https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries" target="_blank" rel="noreferrer">Open data source<span class="visually-hidden"> (opens in a new tab)</span></a>
           </div>
         </div>
         <aside class="hero-card" aria-label="Project summary">
@@ -90,18 +92,18 @@
     <section class="section" aria-labelledby="approach-title">
       <div class="section-head">
         <h2 id="approach-title">How the pipeline works</h2>
-        <p>Designed to reflect the way meaningful data products are built: pull from the source, validate the data, standardize the columns, summarize the signal, and publish a report that is easy to understand.</p>
+        <p>Six steps run every morning: pull from the source, validate, standardize, summarize, and publish a report that is easy to read.</p>
       </div>
       <div class="pipeline-steps">
         <article class="step">
           <div class="step-number">01</div>
           <h3>Source</h3>
-          <p>FEMA OpenFEMA publishes declaration summaries in a public JSON API. The job pulls the latest records on a regular cadence.</p>
+          <p>FEMA's public OpenFEMA REST API publishes Disaster Declarations Summaries, covering every federal declaration since 1953.</p>
         </article>
         <article class="step">
           <div class="step-number">02</div>
           <h3>Extract</h3>
-          <p>The script requests the newest records and captures the critical fields needed for analysis: state, declaration date, event type, title, and disaster number.</p>
+          <p>A daily Python job pages through the full declaration history, 1,000 records at a time, requesting only the fields it needs. Failed requests are retried.</p>
         </article>
         <article class="step">
           <div class="step-number">03</div>
@@ -111,17 +113,17 @@
         <article class="step">
           <div class="step-number">04</div>
           <h3>Transform</h3>
-          <p>Rows are normalized into a clean dataset, with consistent naming and summary metrics suitable for reporting and trend analysis.</p>
+          <p>Text is trimmed and standardized, missing incident types get clear defaults, and declarations are totaled by state, incident type and year.</p>
         </article>
         <article class="step">
           <div class="step-number">05</div>
           <h3>Load</h3>
-          <p>The cleaned output is saved as a static JSON summary that can be consumed by a lightweight dashboard or reporting page.</p>
+          <p>The result is written to a compact JSON summary: the totals plus the 20 most recent declarations, small enough to load instantly.</p>
         </article>
         <article class="step">
           <div class="step-number">06</div>
           <h3>Publish</h3>
-          <p>The page reads the generated data and presents the latest view in a polished, readable dashboard for a portfolio audience.</p>
+          <p>Each morning the site is rebuilt with the fresh summary and this page draws the charts and tables. If FEMA's API is down, the last good copy stays live.</p>
         </article>
       </div>
     </section>
@@ -192,10 +194,11 @@
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="footline">© 2026 Chris Bogdewic · Built to demonstrate practical data engineering in a portfolio setting.</div>
-    </footer>
   </main>
+
+  <footer class="footer container">
+    <div class="footline">© 2026 Chris Bogdewic · Built and deployed with GitHub Actions</div>
+  </footer>
 
   <script src="fema-dashboard.js" defer></script>
 </body>

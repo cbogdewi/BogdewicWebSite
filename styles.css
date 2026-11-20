@@ -159,6 +159,12 @@ main>section:nth-child(even) .pipeline-step{background:#fff}
 .contact-list a{display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:999px;background:#fff;color:var(--ink);font-weight:500;text-decoration:none;box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .2s,color .2s}
 .contact-list a:hover{color:var(--blue);box-shadow:inset 0 0 0 1.5px var(--blue)}
 
+/* ---------- Sub-pages and short-form sections ---------- */
+.page-title{font-size:clamp(38px,5.6vw,64px);letter-spacing:-.03em}
+.section-more{margin-top:24px;text-align:center}
+.award-chips{margin-top:24px}
+main>section.back-home{padding-top:0;background:var(--bg);text-align:center}
+
 /* ---------- Footer ---------- */
 .footer{display:flex;align-items:center;justify-content:center;gap:12px;padding:28px var(--page);border-top:1px solid var(--line);font-size:13px;color:var(--ink-3)}
 .monogram{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--grad);color:#fff;font-size:11px;font-weight:700;letter-spacing:.02em}

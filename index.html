@@ -30,7 +30,6 @@
           <li><a href="#overview">Overview</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#expertise">Expertise</a></li>
-          <li><a href="#pipeline">Pipeline</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="fema-disasters.html">FEMA report</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -203,63 +202,16 @@
           <h3>DHS Secretary's Award for Unity of Effort</h3>
           <p>Issued by the U.S. Department of Homeland Security</p>
         </article>
-        <div class="award-grid">
-          <article class="card award accent-blue">
-            <div class="award-head"><h3>Catalyst Award</h3><span class="award-count">×3</span></div>
-            <p class="award-issuer">MITRE</p>
-            <ul class="award-list">
-              <li><span>2021</span>Detecting and characterizing malicious activities</li>
-              <li><span>2019</span>VA Enterprise System of Systems</li>
-              <li><span>2019</span>Opioid Detection Challenge</li>
-            </ul>
-          </article>
-          <article class="card award accent-green">
-            <div class="award-head"><h3>Spark Award</h3><span class="award-count">×3</span></div>
-            <p class="award-issuer">MITRE</p>
-            <ul class="award-list">
-              <li><span>2021</span>Spark Award</li>
-              <li><span>2019</span>Data Intelligence Project</li>
-              <li><span>2018</span>BI Tools</li>
-            </ul>
-          </article>
-          <article class="card award accent-pink">
-            <div class="award-head"><h3>Homeland Security Center (HLSC) Award</h3><span class="award-count">×10</span></div>
-            <p class="award-issuer">MITRE</p>
-            <ul class="award-list">
-              <li><span>2018</span>SM Pilot (3 awards)</li>
-              <li><span>2018</span>Data Analytics Engine BI Tool Assessment</li>
-              <li><span>2017</span>New York Grand Central Terminal Exercise</li>
-              <li><span>2017</span>Hurricane Harvey Support</li>
-              <li><span>2017</span>Business Intelligence Tool Evaluation</li>
-              <li><span>2017</span>SM Pilot</li>
-              <li><span>2017</span>Two additional awards</li>
-            </ul>
-          </article>
-          <article class="card award accent-slate">
-            <div class="award-head"><h3>Sponsor Employee Recognition Award</h3><span class="award-count">×2</span></div>
-            <p class="award-issuer">MITRE</p>
-            <ul class="award-list">
-              <li><span>2017</span>SM Pilot</li>
-              <li><span>2016</span>Sponsor recognition</li>
-            </ul>
-          </article>
-          <article class="card award accent-blue">
-            <div class="award-head"><h3>Making a Difference Award</h3></div>
-            <p class="award-issuer">MITRE</p>
-            <ul class="award-list">
-              <li><span>2014</span>Making a Difference</li>
-            </ul>
-          </article>
-          <article class="card award accent-green">
-            <div class="award-head"><h3>Earlier recognition</h3><span class="award-count">×3</span></div>
-            <p class="award-issuer">U.S. Navy · BearingPoint / Deloitte</p>
-            <ul class="award-list">
-              <li>Navy Letter of Appreciation for modernizing Navy/USMC Airworthiness Office systems</li>
-              <li>BearingPoint Silver Beacon Award for an enterprise solution for the U.S. Army</li>
-              <li>Compass Award for full-SDLC delivery on federal programs</li>
-            </ul>
-          </article>
-        </div>
+        <ul class="chips award-chips">
+          <li class="chip chip-blue">MITRE Catalyst Award ×3</li>
+          <li class="chip chip-green">MITRE Spark Award ×3</li>
+          <li class="chip chip-pink">MITRE Homeland Security Center Award ×10</li>
+          <li class="chip">Sponsor Employee Recognition ×2</li>
+          <li class="chip chip-blue">MITRE Making a Difference</li>
+          <li class="chip chip-green">Navy Letter of Appreciation</li>
+          <li class="chip chip-pink">BearingPoint Silver Beacon &amp; Compass Awards</li>
+        </ul>
+        <p class="section-more"><a class="inline-link" href="awards.html">See every award and what it was for →</a></p>
       </section>
 
       <section class="section" id="pipeline">
@@ -268,42 +220,8 @@
           <h2>FEMA disaster declarations, cleaned and shaped for insight</h2>
           <p class="section-lede">This pipeline uses FEMA’s Disaster Declarations Summaries dataset, published through FEMA’s public REST API (OpenFEMA). Every day it pulls the full declaration history, validates each record, standardizes the fields, and turns the result into a public summary report.</p>
         </div>
-        <div class="pipeline-card card">
-          <div class="pipeline-grid">
-            <div class="pipeline-step">
-              <span class="step-label">01</span>
-              <h3>Source</h3>
-              <p>FEMA’s public REST API (OpenFEMA v2): Disaster Declarations Summaries, covering every federal disaster declaration from 1953 to today.</p>
-            </div>
-            <div class="pipeline-step">
-              <span class="step-label">02</span>
-              <h3>Extract</h3>
-              <p>A daily scheduled Python job calls the REST API over HTTPS, paging through 1,000 JSON records at a time and using standard query parameters to sort by date and request only the fields it needs. Failed requests are retried automatically.</p>
-            </div>
-            <div class="pipeline-step">
-              <span class="step-label">03</span>
-              <h3>Validate</h3>
-              <p>Reject records missing a disaster number, state or date, or with a malformed date. Duplicate rows are collapsed so each disaster is counted once, and nothing is published if no valid records come back.</p>
-            </div>
-            <div class="pipeline-step">
-              <span class="step-label">04</span>
-              <h3>Transform</h3>
-              <p>Trim and standardize text, fill clear defaults for missing incident types or titles, flag which assistance programs were declared, and total declarations by state, incident type and year.</p>
-            </div>
-            <div class="pipeline-step">
-              <span class="step-label">05</span>
-              <h3>Load</h3>
-              <p>Write the result to a compact JSON summary: the totals plus the 20 most recent declarations, small enough to load instantly in a browser.</p>
-            </div>
-            <div class="pipeline-step">
-              <span class="step-label">06</span>
-              <h3>Publish</h3>
-              <p>Each morning the site is rebuilt with the fresh summary, and the FEMA report page turns it into charts and tables. If FEMA’s API is unavailable, the last good copy stays live.</p>
-            </div>
-          </div>
-          <div class="pipeline-summary">
-            <p>This is the same approach I bring to delivery work: clear inputs, disciplined checks, consistent transformations, and a reliable final output that can be trusted. <a class="inline-link" href="fema-disasters.html">See the live FEMA report →</a></p>
-          </div>
+        <div class="pipeline-summary">
+          <p>This is the same approach I bring to delivery work: clear inputs, disciplined checks, consistent transformations, and a reliable final output that can be trusted. <a class="inline-link" href="fema-disasters.html">See how it works and the live report →</a></p>
         </div>
       </section>
 
@@ -332,58 +250,9 @@
         <div class="section-head">
           <p class="eyebrow">Delivery pipeline</p>
           <h2>How these sites get published</h2>
-          <p class="section-lede">This homepage and my dashboard each run a small DevSecOps pipeline. Every change is security-checked and tested automatically before it can go live.</p>
+          <p class="section-lede">This homepage and my dashboard each run a small DevSecOps pipeline. Every change is a pull request that is scanned for secrets, quality issues and broken links, and nothing goes live unless every check passes.</p>
+          <p class="section-more"><a class="inline-link" href="delivery.html">See the full pipeline diagram →</a></p>
         </div>
-        <div class="flow-wrap card">
-          <svg class="flow" viewBox="0 0 480 706" role="img" aria-labelledby="flow-title flow-desc">
-            <title id="flow-title">How a change reaches www.bogdewic.com and dashboard.bogdewic.com</title>
-            <desc id="flow-desc">A change I request, made by a developer, or a security update from Dependabot, becomes a pull request. Automated checks run on it; if any fail, nothing merges. Once merged, each site’s pipeline re-checks and publishes it. A daily scheduled run also refreshes the FEMA data and republishes the website.</desc>
-            <defs>
-              <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </marker>
-            </defs>
-            <g class="fn fn-person"><rect x="20" y="10" width="200" height="56" rx="10"/><text x="120" y="31" class="fn-t">Chris</text><text x="120" y="50" class="fn-s">Requests a change</text></g>
-            <line x1="120" y1="68" x2="120" y2="94" class="fa"/>
-            <g class="fn fn-build"><rect x="20" y="96" width="200" height="56" rx="10"/><text x="120" y="117" class="fn-t">Developer</text><text x="120" y="136" class="fn-s">Writes the change</text></g>
-            <g class="fn fn-build"><rect x="260" y="96" width="200" height="56" rx="10"/><text x="360" y="117" class="fn-t">Dependabot</text><text x="360" y="136" class="fn-s">Weekly security updates</text></g>
-            <line x1="120" y1="154" x2="120" y2="180" class="fa"/>
-            <line x1="360" y1="154" x2="360" y2="180" class="fa"/>
-            <g class="fn fn-build"><rect x="20" y="182" width="440" height="56" rx="10"/><text x="240" y="203" class="fn-t">Pull request</text><text x="240" y="222" class="fn-s">A proposed change is reviewed</text></g>
-            <line x1="170" y1="240" x2="170" y2="266" class="fa"/>
-            <g class="fn fn-check"><rect x="20" y="268" width="300" height="56" rx="10"/><text x="170" y="289" class="fn-t">Automated checks</text><text x="170" y="308" class="fn-s">Secrets, quality and build validation</text></g>
-            <line x1="322" y1="296" x2="338" y2="296" class="fa"/>
-            <g class="fn fn-fail"><rect x="340" y="268" width="120" height="56" rx="10"/><text x="400" y="289" class="fn-t">Check fails</text><text x="400" y="308" class="fn-s">Nothing ships</text></g>
-            <line x1="170" y1="326" x2="170" y2="352" class="fa"/>
-            <g class="fn fn-build"><rect x="20" y="354" width="300" height="56" rx="10"/><text x="170" y="375" class="fn-t">Merge to main</text><text x="170" y="394" class="fn-s">Only after every check passes</text></g>
-            <g class="fn fn-check"><rect x="340" y="354" width="120" height="56" rx="10"/><text x="400" y="375" class="fn-t">Daily run</text><text x="400" y="394" class="fn-s">FEMA refresh</text></g>
-            <path d="M170 412 V425 H120 V438" fill="none" class="fa"/>
-            <path d="M170 412 V425 H320 V438" fill="none" class="fa"/>
-            <line x1="400" y1="412" x2="400" y2="438" class="fa"/>
-            <g class="fn fn-build"><rect x="20" y="440" width="200" height="56" rx="10"/><text x="120" y="461" class="fn-t">Dashboard pipeline</text><text x="120" y="480" class="fn-s">Re-tests and restarts</text></g>
-            <g class="fn fn-build"><rect x="260" y="440" width="200" height="56" rx="10"/><text x="360" y="461" class="fn-t">Website pipeline</text><text x="360" y="480" class="fn-s">Re-checks and publishes</text></g>
-            <line x1="120" y1="498" x2="120" y2="524" class="fa"/>
-            <line x1="360" y1="498" x2="360" y2="524" class="fa"/>
-            <g class="fn fn-host"><rect x="20" y="526" width="200" height="56" rx="10"/><text x="120" y="547" class="fn-t">GoDaddy hosting</text><text x="120" y="566" class="fn-s">dashboard.bogdewic.com</text></g>
-            <g class="fn fn-host"><rect x="260" y="526" width="200" height="56" rx="10"/><text x="360" y="547" class="fn-t">GitHub Pages</text><text x="360" y="566" class="fn-s">www.bogdewic.com</text></g>
-            <g class="fn fn-person"><rect x="20" y="640" width="200" height="56" rx="10"/><text x="120" y="661" class="fn-t">Visitor</text><text x="120" y="680" class="fn-s">Opens a site</text></g>
-            <line x1="222" y1="668" x2="258" y2="668" class="fa"/>
-            <g class="fn fn-host"><rect x="260" y="640" width="200" height="56" rx="10"/><text x="360" y="661" class="fn-t">GoDaddy DNS</text><text x="360" y="680" class="fn-s">Routes each name</text></g>
-            <line x1="360" y1="638" x2="360" y2="584" class="fa"/>
-            <path d="M300 638 V612 H120 V584" fill="none" class="fa"/>
-          </svg>
-        </div>
-        <ol class="flow-steps">
-          <li><span class="step-dot dot-gray"></span><div><h3>Chris</h3><p>Every update starts with my request: content changes, a design tweak or a new section.</p></div></li>
-          <li><span class="step-dot dot-blue"></span><div><h3>Developer</h3><p>Makes the edits on a separate branch so every change is controlled and traceable.</p></div></li>
-          <li><span class="step-dot dot-green"></span><div><h3>Dependabot</h3><p>Checks weekly for software security updates and proposes them automatically.</p></div></li>
-          <li><span class="step-dot dot-pink"></span><div><h3>Pull request</h3><p>Every change is reviewed as a pull request before it can be merged.</p></div></li>
-          <li><span class="step-dot dot-slate"></span><div><h3>Automated checks</h3><p>Each change is scanned for secrets, quality issues and broken links before it proceeds.</p></div></li>
-          <li><span class="step-dot dot-gray"></span><div><h3>Check fails</h3><p>If any check finds a problem, the change is blocked and the live site stays exactly as it was.</p></div></li>
-          <li><span class="step-dot dot-blue"></span><div><h3>Merge to main</h3><p>Once every check passes, the change is merged into the main version of the code.</p></div></li>
-          <li><span class="step-dot dot-green"></span><div><h3>Deploy</h3><p>Each site’s pipeline re-runs its checks, then publishes the website to GitHub Pages or uploads and restarts the dashboard on GoDaddy.</p></div></li>
-          <li><span class="step-dot dot-slate"></span><div><h3>Daily run</h3><p>Every morning the website pipeline also runs on a schedule to pull fresh FEMA data and republish, with no code change needed.</p></div></li>
-        </ol>
       </section>
 
       <section class="section contact" id="contact">
